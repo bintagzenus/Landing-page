@@ -1,1 +1,320 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rasa Nusantara</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Young+Serif&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!--Header-->
+    <header class="fContainer">
+        <nav class="wrapper">
+            <div class="brand">
+                <div class="firstname">Rasa</div>
+                <div class="lastname">Nusantara</div>
+            </div>
+        </nav>
+        <ul class="navbar">
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#About">About</a></li>
+            <li><a href="#Menu">Menu</a></li>
+            <li><a href="#Contact">Contact</a></li>
+        </ul>
+    </header>
+
+    <!--Cart-->
+    <button class="cart" type="button" onclick="toggleCart()" aria-label="Buka keranjang belanja">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span id="cart-count">0</span>
+    </button>
+    <div class="cart-box" id="cartBox">
+        <h3>Keranjang Belanja</h3>
+        <ul id="cart-items"></ul>
+        <button type="button" onclick="checkout()">Checkout</button>
+    </div>
+
+    <main>
+    <!--Hero section-->
+        <section class="hero" id="Home">
+            <div class="hero-content">
+                <h1>Rasa <span>Nusantara</span></h1>
+                <p>
+                    Sajian jajanan & Minuman Tradisional UMKM dengan citra rasa asli Indonesia
+                </p>
+                <div class="hero-btn">
+                    <a href="#makanan" class="btn-primary">Lihat makanan</a>
+                    <a href="#minuman" class="btn-secondary">Lihat Minuman</a>
+                </div>
+            </div>
+        </section>
+
+    <!--Selamat datang-->
+        <section class="welcome" id="Welcome">
+            <h1>Selamat Datang di Rasa Nusantara</h1>
+            <div class="welcome-text">
+                <p>
+                    Rasa Nusantara adalah UMKM kuliner yang menghadirkan berbagai jajanan tradisional
+                    khas Indonesia dengan cita rasa autentik. Kami mengutamakan kualitas bahan,
+                    kebersihan dan rasa asli yang diwariskan secara turun temurun.
+                </p>
+                <p>
+                    Nikmati Kelezatan jajanan pasar yang penuh kenangan dan rasa khas Nusantara.
+                </p>
+            </div>
+        </section>
+
+    <!--Keunggulan Produk-->
+        <section id="features">
+            <div class="primacy">
+                <h2>Keunggulan Produk</h2>
+                <div class="features">
+                    <div class="feature">
+                        <i class="fa-solid fa-leaf"></i>
+                        <h3>Bahan Alami & Segar</h3>
+                    </div>
+
+                    <div class="feature">
+                        <i class="fa-solid fa-award"></i>
+                        <h3>Resep Tradisional Asli</h3>
+                    </div>
+
+                    <div class="feature">
+                        <i class="fa-solid fa-droplet"></i>
+                        <h3>Fresh Setiap Hari</h3>
+                    </div>
+
+                    <div class="feature">
+                        <i class="fas fa-flag"></i>
+                        <h3>Rasa Khas Nusantara</h3>
+                    </div>
+
+                    <div class="feature">
+                        <i class="fas fa-star"></i>
+                        <h3>Harga UMKM, Rasa Bintang Lima</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!--promo-->
+        <section id="Promo">
+            <div class="Diskon">
+                <div class="img">
+                    <img src="image/diskon.png" alt="Promo paket lengkap jajanan tradisional" loading="lazy">
+                </div>
+                <div class="promo-body">
+                    <h2 class="promo-title">Diskon %</h2>
+                    <span class="promo-tag">Penawaran Spesial Hari ini</span>
+
+                    <p>
+                        Beli Paket Lengkap Jajanan Tradisional ( Klepon + Onde Onde + Kue Cucur
+                        + Lemper + Kue Lapis Putu )
+                    </p>
+
+                    <h2 class="promo-percent">Diskon: <strong> 15% </strong></h2>
+                    <p class="Harga-diskon"> Harga Paket 55.000</p>
+                    <button type="button" onclick="addToCart(`Paket Diskon`, 55000)">Beli</button>
+                </div>
+            </div>
+        </section>
+
+    <!--Menu-->
+        <section id="Menu">
+            <h1 class="menu-title">Menu</h1>
+
+            <section class="Menu-section" id="makanan">
+                <h2 class="Judul-menu"><i class="fa-solid fa-cookie-bite"></i> makanan Tradisional</h2>
+                <div class="scroll-container">
+                    <div class="Product">
+                        <img src="image/Klepon.jpg" alt="klepon" loading="lazy">
+                        <div class="content">
+                            <h3>Klepon Gula Aren</h3>
+                            <p>Lembut & lumer di mulut</p>
+                            <div class="Price">Rp 10.000/ Isi 5</div>
+                            <button type="button" onclick="addToCart(`Klepon`, 10000)">Beli</button>
+                        </div>
+                    </div>
+
+                    <div class="Product">
+                        <img src="image/Onde onde.jpg" alt="Onde-Onde" loading="lazy">
+                        <div class="content">
+                            <h3>Onde-Onde Wijen</h3>
+                            <p>Renyah di luar, manis di dalam</p>
+                            <div class="Price">Rp 12.000/ Isi 4</div>
+                            <button type="button" onclick="addToCart(`Onde-Onde`, 12000)">Beli</button>
+                        </div>
+                    </div>
+
+                    <div class="Product">
+                        <img src="image/Kue cucur.jpg" alt="Kue Cucur" loading="lazy">
+                        <div class="content">
+                            <h3>Kue Cucur</h3>
+                            <p>Renyah di pinggir, lembut di tengah</p>
+                            <div class="Price">Rp 10.000/ Isi 3</div>
+                            <button type="button" onclick="addToCart(`Kue Cucur`, 10000)">Beli</button>
+                        </div>
+                    </div>
+
+                    <div class="Product">
+                        <img src="image/lemper.png" alt="Lemper" loading="lazy">
+                        <div class="content">
+                            <h3>Lemper</h3>
+                            <p>Ketan pulen isi ayam suwir</p>
+                            <div class="Price">Rp 12.000/ Isi 3</div>
+                            <button type="button" onclick="addToCart(`Lemper`, 12000)">Beli</button>
+                        </div>
+                    </div>
+
+                    <div class="Product">
+                        <img src="image/Kue lapis.jpg" alt="Kue Lapis" loading="lazy">
+                        <div class="content">
+                            <h3>Kue Lapis Legit</h3>
+                            <p>Kue Kenyal berlapis warna dengan rasa manis lembut</p>
+                            <div class="Price">Rp 12.000/ Isi 5</div>
+                            <button type="button" onclick="addToCart(`Kue Lapis`, 12000)">Beli</button>
+                        </div>
+                    </div>
+
+                    <div class="Product">
+                        <img src="image/Kue Putu.jpg" alt="Putu" loading="lazy">
+                        <div class="content">
+                            <h3>Putu</h3>
+                            <p>Kue kukus hangat berisi gula merah dan kelapa</p>
+                            <div class="Price">Rp 10.000/ isi 4 pcs</div>
+                            <button type="button" onclick="addToCart(`Putu`, 10000)">Beli</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="minuman">
+                <h2 class="Judul-menu"><i class="fa-solid fa-glass-water"></i> Minuman</h2>
+                <div class="container">
+                    <div class="Product">
+                        <img src="image/es dawet.jpg" alt="Es Cendol" loading="lazy">
+                        <div class="Content">
+                            <h3>Es Dawet</h3>
+                            <p>Segar dari cendol, santan dan gula aren asli</p>
+                            <div class="Price">Rp 6.000/gelas</div>
+                            <button type="button" onclick="addToCart(`Es Dawet`, 6000)">Beli</button>
+                        </div>
+                    </div>
+
+                    <div class="Product">
+                        <img src="image/teh talua.png" alt="Teh Talua" loading="lazy">
+                        <div class="Content">
+                            <h3>Teh Talua</h3>
+                            <p>Teh Khas MinangKabau yang menghangatkan dn berenergi</p>
+                            <div class="Price">Rp 8.000/gelas</div>
+                            <button type="button" onclick="addToCart(`Teh Talua`, 8000)">Beli</button>
+                        </div>
+                    </div>
+
+                    <div class="Product">
+                        <img src="image/wedang jahe.jpg" alt="Wedang Jahe" loading="lazy">
+                        <div class="Content">
+                            <h3>Wedang Jahe</h3>
+                            <p>Minuman jahe hangat dengan aroma rempah alami</p>
+                            <div class="Price">Rp 6.000/gelas</div>
+                            <button type="button" onclick="addToCart(`Wedang Jahe`, 6000)">Beli</button>
+                        </div>
+                    </div>
+
+                    <div class="Product">
+                        <img src="image/es cincau.png" alt="Es Cincau" loading="lazy">
+                        <div class="Content">
+                            <h3>Es Cincau</h3>
+                            <p>Segar dari cincau hitam dan gula aren</p>
+                            <div class="Price">Rp 5.000/gelas</div>
+                            <button type="button" onclick="addToCart(`Es Cincau`, 5000)">Beli</button>
+                        </div>
+                    </div>
+
+                    <div class="Product">
+                        <img src="image/Es boba .jpg" alt="Es Boba Milk Original" loading="lazy">
+                        <div class="Content">
+                            <h3>Es Boba Milk Original</h3>
+                            <p>Minuman boba kenyal dengan campuran susu manis</p>
+                            <div class="Price">Rp 8.000/gelas</div>
+                            <button type="button" onclick="addToCart(`Es Boba Milk Original`, 8000)">Beli</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+    <!--About-->
+        <section class="About" id="About">
+            <div class="about-photo">
+                <img src="image/Onde onde.jpg" alt="Onde-onde dalam wadah kayu" loading="lazy">
+            </div>
+            <div class="judul">
+                <h2>Tentang Rasa Nusantara</h2>
+                <p class="deskripsi">
+                    Rasa Nusantara merupakan usaha mikro kecil dan menengah(UMKM) yangbergerak
+                    di bidang kuliner tradisional Indonesia. Kami berdiri dengan tujuan melestarikan
+                    dan memperkenalkan jajanan khas Nusantara kepada masyarakat luas.
+                </p>
+                <p>
+                    Setiap produk yang kami sajikan dibuat menggunakan bahan berkualitas dan resep
+                    tradisional yang dijaga keaslian nya. Kami percaya cita rasa lokal adalah bagian
+                    dari identitas bangsa yang perlu terus dilestarikan
+                </p>
+            </div>
+        </section>
+
+    <!--CTA-->
+        <section class="cta">
+            <h2>Rindu Jajanan Tradisional?</h2>
+            <p>
+                Nikmati Jajanan Tradisonal dan minuman  langsung dari UMKM lokal yang terjamin
+                enak segar dari bahan alami
+            </p>
+        </section>
+
+    <!--Kontak kami-->
+        <section class="Contact" id="Contact">
+            <div class="contact-container">
+                <h2>Kontak Kami</h2>
+                <p>
+                    Kami siap melayani pemesanan dan pertanyaan
+                    seputar produk UMKM Rasa Nusantara.
+                </p>
+
+                <div class="contact-info">
+                    <p>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span><strong>Alamat: </strong>Jl. Koto Agung Kiri, Nagari Sungai
+                        Duo, Kecamatan Sitiung, Kab. Dharmasraya, Sumatera Barat</span>
+                    </p>
+                    <p>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span><strong>Email: </strong>rasanusantara@umkm.com</span>
+                    </p>
+                    <p>
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span><strong>WhatsApp: </strong>082341445232</span>
+                    </p>
+                    <p>
+                        <i class="fa-solid fa-clock"></i>
+                        <span><strong>Jam Operasional: </strong>08.00 - 20.00 WIB</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Rasa Nusantara - UMKM Indonesia</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
